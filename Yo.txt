@@ -1,0 +1,62 @@
+
+
+
+
+Rock paper scissors with 5 rounds me vs the computer 
+
+first step is to get the computer choices and my choices 
+
+2nd step is to loop around it for 5 rounds and end it when somebody has won
+
+making sure to count the players wins / loses
+
+
+So next is making website look good , will be dealing with the rounds thing later 
+
+First we Need 3 picture for rock / paper / scissors to put it on the website and make an action happens when the person press on the picture
+
+
+    
+    
+    <script>
+    let Choices = ['rock', 'paper', 'scissors'] 
+    function getComputerChoices(Choices){
+           
+    return Choices[Math.floor(Math.random()* 3)]
+    }
+    let personChoice =  prompt('choose Rock, Paper, Scissors: ').toLowerCase()
+    let computerChoices = getComputerChoices(Choices)
+    
+    let Computerwins = 0 
+    
+    let Personwins = 0
+
+    function PlayGame(personChoice, computerChoices){
+        if (personChoice === computerChoices){
+            console.log(personChoice, computerChoices)
+            console.log("Draw")
+
+        }
+        else if (personChoice == 'rock' && computerChoices == 'scissors' || personChoice == 'paper' && computerChoices == 'rock' || personChoice == 'scissors' && computerChoices == 'paper'){
+            Personwins += 1
+            console.log("Player wins: "+ personChoice + " Beats " + computerChoices )
+        }
+        else{
+            Computerwins += 1
+            console.log("Computer wins: "+ computerChoices + " Beats " + personChoice )
+        }
+    }
+
+
+    PlayGame(personChoice, computerChoices)
+    console.log("Computer :" , Computerwins + '|' + "Player: ", Personwins)
+
+
+while (Personwins < 5 || Computerwins < 5) {
+    for (i = 0 ; i < 10; i++){
+    let personChoice = prompt("Please enter value").toLowerCase();
+    let computerChoices = getComputerChoices(Choices);}
+    if (Personwins === 5 || Computerwins === 5 ) ; break
+    }
+
+</script>

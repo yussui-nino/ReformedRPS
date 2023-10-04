@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1> Rock Paper Scissors Ultimate challenge Hajimeee !</h1>
+
+    <img src="./Pictures/02BW026-full.webp" style="width: 300px; height: 300px;">
+    <img src="./Pictures/EydnUnZXMAEV1L4.png" style="width: 300px; height: 300px;">
+    <img src="./Pictures/MalphiteSquare.webp" style="width: 300px; height: 300px;">
+
+    
+    <script>
+
+   
+        function getComputerChoice(ComputerChoice){
+        return  ComputerChoice = Math.floor(Math.random() *3 + 1)}
+            
+        function PcChoice(){
+        let PChoice =  getComputerChoice()
+        if (PChoice == "1"){
+            Deecision = "Rock"
+        } 
+        else if (PChoice == "2"){
+            Deecision = "Paper"
+
+        }
+         else{
+            Deecision = "Scissors"}
+            return Deecision
+        }
+        
+    
+        function GetPlayerChoice(PlayerChoice){
+        return PlayerChoice = prompt("pick between 1.Rock, 2.Paper, 3.Scissors: (in numbers)") }
+
+        function Player(){
+            let Choice = GetPlayerChoice()
+            if (Choice == "1"){
+                Decision = "Rock"
+        } 
+        else if (Choice == "2"){
+            Decision = "Paper"
+
+        }
+         else{
+            Decision = "Scissors"}
+            return Decision
+        }
+        let Cpoints = 0
+        let Hpoints = 0
+        function PlayGame(){
+            while (Cpoints < 5 && Hpoints < 5) {
+            Human = Player()
+            Computer = PcChoice()
+ 
+            console.log("Player choose :" ,Human)
+            console.log("Computer Choose:",Computer)
+
+            if(Human == Computer){
+                console.log("Its a Draw")
+                console.log("Computer Points:", Cpoints, "Player Points:", Hpoints)
+            
+            }
+            else if (Human == "Rock" && Computer == "Scissors" || Human == "Paper" && Computer == "Rock" || Human == "Scissors" && Computer == "Paper"){
+            console.log("Player Wins ")
+            Hpoints += 1 ;
+            console.log("Computer Points:", Cpoints, "Player Points:", Hpoints)
+        }
+            else {
+            console.log("Computer wins")
+            Cpoints += 1;
+            console.log("Computer Points:", Cpoints, "Player Points:", Hpoints)
+            }
+
+            if (Cpoints === 5 || Hpoints === 5) {
+      console.log("Game over!");
+      break;
+    }
+
+
+        }
+    }
+ 
+PlayGame()
+        
+
+
+ 
+    </script>
+    
+    
+    
+
+    
+    
+
+
+</body>
+</html>
