@@ -15,27 +15,49 @@
 
     <h1>Testing the new branch</h1>
     
-    <script>
-
-   
-        function getComputerChoice(ComputerChoice){
-        return  ComputerChoice = Math.floor(Math.random() *3 + 1)}
-            
-        function PcChoice(){
-        let PChoice =  getComputerChoice()
-        if (PChoice == "1"){
-            Deecision = "Rock"
-        } 
-        else if (PChoice == "2"){
-            Deecision = "Paper"
-
-        }
-         else{
-            Deecision = "Scissors"}
-            return Deecision
-        }
-        
     
+    <div id = container>
+
+        <button id="1">Rock </button>
+        <button id="2">Paper</button>
+        <button id="3">Scissors</button>    
+
+    </div>
+    <button id = 'Begin'>Start Game</button>
+    <div id = State>
+        <div class="Win"></div>
+        <div class="Draw"></div>
+        <div class="Lose"></div>
+    </div>
+    
+    
+    <script>
+        function getComputerChoice() {
+          return Math.floor(Math.random() * 3 + 1);
+        }
+      
+        function PcChoice() {
+          let PChoice = getComputerChoice();
+          if (PChoice == 1) {
+            return "Rock";
+          } else if (PChoice == 2) {
+            return "Paper";
+          } else {
+            return "Scissors";
+          }
+        }
+      
+        const Container = document.querySelector('#State')
+
+
+        const WinText = document.createElement('div')
+        WinText.classList.add('Win')
+        WinText.textContent = 'Player Wins'
+ 
+      
+
+
+
         function GetPlayerChoice(PlayerChoice){
         return PlayerChoice = prompt("pick between 1.Rock, 2.Paper, 3.Scissors: (in numbers)") }
 
@@ -68,7 +90,7 @@
             
             }
             else if (Human == "Rock" && Computer == "Scissors" || Human == "Paper" && Computer == "Rock" || Human == "Scissors" && Computer == "Paper"){
-            console.log("Player Wins ")
+            console.log("Player Wins")
             Hpoints += 1 ;
             console.log("Computer Points:", Cpoints, "Player Points:", Hpoints)
         }
@@ -87,13 +109,99 @@
         }
     }
  
-PlayGame()
+    Start = document.querySelector('#Begin')
         
+        Start.addEventListener("click", ()=>{
+            PlayGame()
+        });
 
 
- 
-    </script>
+//          function getComputerChoice(ComputerChoice){
+//    return  ComputerChoice = Math.floor(Math.random() *3 + 1)}
+        
+//     function PcChoice(){
+//     let PChoice =  getComputerChoice()
+//     if (PChoice == "1"){
+//         Deecision = "Rock"
+//     } 
+//     else if (PChoice == "2"){
+//         Deecision = "Paper"
+
+//     }
+//      else{
+//         Deecision = "Scissors"}
+//         return Deecision
+//     }
+
+//     const  PlayerChoicess = document.querySelectorAll('button') 
+
+//     let Weapon ;
     
+// function handleChoiceClick() {
+// if (this.id != 'Begin') { Weapon = this.id;
+
+// } } PlayerChoicess.forEach((Choices)=> { Choices.addEventListener('click', handleChoiceClick, {once:true})});
+
+//  function Player() {
+
+// return new 
+// Promise((resolve) => {
+//     function handlePlayerChoice() {
+//   let Choice = Weapon;
+//   if (Choice == "1") {
+//     resolve("Rock");
+//   } else if (Choice == "2") {
+//     resolve("Paper");
+//   } else {
+//     resolve("Scissors");
+//   }
+// }
+
+// handlePlayerChoice();
+// }); }
+
+//     let Cpoints = 0
+//     let Hpoints = 0
+    
+//     function PlayGame(){
+//         while (Cpoints < 5 && Hpoints < 5) {
+//         let Human = Player()
+//         Computer = PcChoice()
+//         console.log("Player choose :" ,Human)
+//         console.log("Computer Choose:",Computer)
+
+//         if(Human == Computer){
+      
+//             console.log("Computer Points:", Cpoints, "Player Points:", Hpoints)
+
+        
+//         }
+//         else if (Human == "Rock" && Computer == "Scissors" || Human == "Paper" && Computer == "Rock" || Human == "Scissors" && Computer == "Paper"){
+//         console.log("Player Wins ")
+//         Hpoints += 1 ;
+//         console.log("Computer Points:", Cpoints, "Player Points:", Hpoints)
+//     }
+//         else {
+//         console.log("Computer wins")
+//         Cpoints += 1;
+//         console.log("Computer Points:", Cpoints, "Player Points:", Hpoints)
+//         }
+
+//         if (Cpoints === 5 || Hpoints === 5) {
+//   console.log("Game over!");
+//     break;
+    
+// }
+
+
+//     }
+// }
+// PlayGame()
+      
+      
+      </script>
+
+
     
     
 
@@ -103,3 +211,4 @@ PlayGame()
 
 </body>
 </html>
+
